@@ -1,0 +1,28 @@
+<!-- <app-game-header></app-game-header> -->
+<div class="app-page-game">
+  <div class="score">
+    <div class="title">SCORE</div>
+    <div class="score-items">
+      <div class="item">{{ name }}</div>
+      <div class="item">BOT</div>
+    </div>
+    <div class="score-items">
+      <div class="item points">{{ score?.winPoints }}</div>
+      <div class="item points">{{ score?.lostPoints }}</div>
+    </div>
+  </div>
+
+  <div class="game">
+    <div class="item" (click)="onMove(movementType.ROCK)">
+      PIEDRA
+      <div innerHTML="U + 2704"></div>
+    </div>
+    <div class="item" (click)="onMove(movementType.PAPER)">PAPEL</div>
+    <div class="item" (click)="onMove(movementType.SCISSORS)">TIJERA</div>
+  </div>
+  <div class="play">
+    <div class="title">PLAYING:</div>
+    <div class="item">{{ name }} --- {{ movePlayed?.my }}</div>
+    <div class="item">BOT --- {{ movePlayed?.bot }}</div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="app-home">
+  <div>Create a new player</div>
+  <app-base-input [label]="'Name'" [formControl]="nameControl"></app-base-input>
+  <button [disabled]="!nameControl.valid" (click)="join()">Join</button>
+</div>

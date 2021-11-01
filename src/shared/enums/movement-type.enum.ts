@@ -1,0 +1,5 @@
+export enum MOVEMENT_TYPE {
+  PAPER = "PAPER",
+  ROCK = "ROCK",
+  SCISSORS = "SCISSORS",
+}

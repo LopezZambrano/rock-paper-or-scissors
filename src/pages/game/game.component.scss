@@ -1,0 +1,64 @@
+.app-page-game {
+  padding: 20px 30px;
+  .score {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f618d;
+
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    .title {
+      color: #ebf5fb;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .score-items {
+      display: flex;
+      width: 70%;
+      .item {
+        height: 20px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border: 1px solid #fad7a0;
+        color: #fad7a0;
+        &.points {
+          color: #e67e22;
+        }
+      }
+    }
+  }
+  .game {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item {
+      width: 60px;
+      height: 60px;
+      border: 1px solid black;
+    }
+  }
+
+  .play {
+    margin-top: 40px;
+    .title {
+      color: #1f618d;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .item {
+      color: #154360;
+      padding: 5px 0;
+      text-transform: uppercase;
+    }
+  }
+}

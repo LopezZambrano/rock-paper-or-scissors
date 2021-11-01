@@ -1,0 +1,15 @@
+.app-header {
+  background-color: #2874a6;
+  display: flex;
+  padding: 20px 30px;
+  .title {
+    text-transform: uppercase;
+  }
+  .app-header-content {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

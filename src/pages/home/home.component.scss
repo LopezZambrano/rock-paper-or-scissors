@@ -1,0 +1,15 @@
+.app-home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  color: #2874a6;
+  margin: 0 auto;
+  div,
+  app-base-input {
+    padding: 20px 0;
+  }
+  button {
+    width: 50%;
+  }
+}

@@ -1,0 +1,7 @@
+<label>{{ label }}</label>
+<input
+  [value]="value"
+  [disabled]="isDisabled"
+  type="text"
+  (input)="onInput($event.target.value)"
+/>
