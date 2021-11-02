@@ -14,15 +14,19 @@
 
   <div class="game">
     <div class="item" (click)="onMove(movementType.ROCK)">
-      PIEDRA
+      <span> &#9994;</span>
       <div innerHTML="U + 2704"></div>
     </div>
-    <div class="item" (click)="onMove(movementType.PAPER)">PAPEL</div>
-    <div class="item" (click)="onMove(movementType.SCISSORS)">TIJERA</div>
+    <div class="item" (click)="onMove(movementType.PAPER)">
+      <span> &#9995;</span>
+    </div>
+    <div class="item" (click)="onMove(movementType.SCISSORS)">
+      <span> &#9996;</span>
+    </div>
   </div>
   <div class="play">
     <div class="title">PLAYING:</div>
-    <div class="item">{{ name }} --- {{ movePlayed?.my }}</div>
-    <div class="item">BOT --- {{ movePlayed?.bot }}</div>
+    <div class="item">{{ name }} &#10547; {{ movePlayed?.my }}</div>
+    <div class="item">BOT &#10547; {{ movePlayed?.bot }}</div>
   </div>
 </div>

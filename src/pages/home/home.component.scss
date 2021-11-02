@@ -9,7 +9,15 @@
   app-base-input {
     padding: 20px 0;
   }
+  div {
+    font-weight: bold;
+  }
   button {
     width: 50%;
+    background-color: #2874a6;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
   }
 }

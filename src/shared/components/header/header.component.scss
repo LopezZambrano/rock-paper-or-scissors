@@ -1,15 +1,20 @@
 .app-header {
   background-color: #2874a6;
   display: flex;
-  padding: 20px 30px;
+  padding: 10px 30px;
   .title {
     text-transform: uppercase;
   }
   .app-header-content {
+    height: 60px;
     color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .icon {
+    font-size: 30px;
+    transform: rotate(180deg);
   }
 }
