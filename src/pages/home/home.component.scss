@@ -1,6 +1,7 @@
 .app-home {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 30px;
   color: #2874a6;
@@ -11,9 +12,10 @@
   }
   div {
     font-weight: bold;
+    font-size: 40px;
   }
   button {
-    width: 50%;
+    width: 100px;
     background-color: #2874a6;
     height: 30px;
     color: white;

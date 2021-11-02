@@ -1,5 +1,9 @@
 .app-page-game {
   padding: 20px 30px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   .score {
     width: 70%;
     margin: 0 auto;
@@ -35,7 +39,7 @@
     }
   }
   .game {
-    margin: 30px 0;
+    margin: 50px 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
