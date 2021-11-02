@@ -11,7 +11,7 @@ import { IPoints } from "src/shared/models/points.interface";
   styleUrls: ["./game.component.scss"],
 })
 export class GameComponent implements OnInit {
-  constructor(private activatedroute: ActivatedRoute, private router: Router) {}
+  constructor(private activatedroute: ActivatedRoute, public router: Router) {}
 
   public score: IPoints;
   public name: string;
@@ -39,18 +39,18 @@ export class GameComponent implements OnInit {
     }, 1100);
   }
 
-  private checkIfUserExists() {
+  public checkIfUserExists() {
     const userExists = localStorage.getItem(this.name);
     if (!userExists) {
       this.router.navigate(["/"]);
     }
   }
 
-  private getScoreSaved() {
+  public getScoreSaved() {
     this.score = JSON.parse(localStorage.getItem(this.name));
   }
 
-  private getRndMovement() {
+  private getRndMovement(): MOVEMENT_TYPE {
     const num = Math.floor(Math.random() * (2 - 0)) + 0;
     const movementTypes: MOVEMENT_TYPE[] = [
       MOVEMENT_TYPE.PAPER,
@@ -76,10 +76,10 @@ export class GameComponent implements OnInit {
     );
   }
 
-  private upgradeScore(
+  public upgradeScore(
     movementType: MOVEMENT_TYPE,
     botMovement: MOVEMENT_TYPE
-  ) {
+  ): void {
     const winPoint = this.winPoint(movementType, botMovement);
     if (winPoint === null) {
       return;
@@ -91,10 +91,7 @@ export class GameComponent implements OnInit {
     }
   }
 
-  private saveScore() {
-    const userExists = localStorage.setItem(
-      this.name,
-      JSON.stringify(this.score)
-    );
+  saveScore(): void {
+    localStorage.setItem(this.name, JSON.stringify(this.score));
   }
 }
