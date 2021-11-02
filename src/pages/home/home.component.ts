@@ -9,7 +9,7 @@ import { IPoints } from "src/shared/models/points.interface";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   nameControl: FormControl = new FormControl("", Validators.required);
 
@@ -26,6 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   userExists(name: string): boolean {
-    return localStorage.getItem(this.nameControl.value) !== null;
+    return localStorage.getItem(name) !== null;
   }
 }

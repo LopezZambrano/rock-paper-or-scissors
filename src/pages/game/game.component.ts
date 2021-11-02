@@ -2,6 +2,7 @@ import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MOVEMENT_TYPE } from "src/shared/enums/movement-type.enum";
+import { IMovement } from "src/shared/models/movement.interface";
 import { IPoints } from "src/shared/models/points.interface";
 
 @Component({
@@ -15,25 +16,12 @@ export class GameComponent implements OnInit {
   public score: IPoints;
   public name: string;
   public movementType = MOVEMENT_TYPE;
-  public movePlayed: {
-    my: MOVEMENT_TYPE;
-    bot?: MOVEMENT_TYPE;
-  };
+  public movePlayed: IMovement;
 
   ngOnInit(): void {
     this.name = this.activatedroute.snapshot.paramMap.get("name");
     this.checkIfUserExists();
     this.getScoreSaved();
-  }
-
-  checkIfUserExists() {
-    const userExists = localStorage.getItem(this.name);
-    if (!userExists) {
-      this.router.navigate(["/"]);
-    }
-  }
-  getScoreSaved() {
-    this.score = JSON.parse(localStorage.getItem(this.name));
   }
 
   onMove(movementType: MOVEMENT_TYPE) {
@@ -51,7 +39,18 @@ export class GameComponent implements OnInit {
     }, 1100);
   }
 
-  getRndMovement() {
+  private checkIfUserExists() {
+    const userExists = localStorage.getItem(this.name);
+    if (!userExists) {
+      this.router.navigate(["/"]);
+    }
+  }
+
+  private getScoreSaved() {
+    this.score = JSON.parse(localStorage.getItem(this.name));
+  }
+
+  private getRndMovement() {
     const num = Math.floor(Math.random() * (2 - 0)) + 0;
     const movementTypes: MOVEMENT_TYPE[] = [
       MOVEMENT_TYPE.PAPER,
@@ -61,7 +60,10 @@ export class GameComponent implements OnInit {
     return movementTypes[num];
   }
 
-  winPoint(meMovement: MOVEMENT_TYPE, botMovement: MOVEMENT_TYPE): boolean {
+  private winPoint(
+    meMovement: MOVEMENT_TYPE,
+    botMovement: MOVEMENT_TYPE
+  ): boolean {
     if (meMovement === botMovement) {
       return null;
     }
@@ -74,7 +76,10 @@ export class GameComponent implements OnInit {
     );
   }
 
-  upgradeScore(movementType: MOVEMENT_TYPE, botMovement: MOVEMENT_TYPE) {
+  private upgradeScore(
+    movementType: MOVEMENT_TYPE,
+    botMovement: MOVEMENT_TYPE
+  ) {
     const winPoint = this.winPoint(movementType, botMovement);
     if (winPoint === null) {
       return;
@@ -86,7 +91,7 @@ export class GameComponent implements OnInit {
     }
   }
 
-  saveScore() {
+  private saveScore() {
     const userExists = localStorage.setItem(
       this.name,
       JSON.stringify(this.score)

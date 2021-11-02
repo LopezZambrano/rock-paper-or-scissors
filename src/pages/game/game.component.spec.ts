@@ -1,16 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { ActivatedRoute, RouterModule } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { InputComponent } from "src/shared/components/input/input.component";
 
-import { GameComponent } from './game.component';
+import { GameComponent } from "./game.component";
 
-describe('GameComponent', () => {
+describe("GameComponent", () => {
   let component: GameComponent;
   let fixture: ComponentFixture<GameComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameComponent ]
-    })
-    .compileComponents();
+      declarations: [GameComponent, InputComponent],
+      imports: [RouterTestingModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +22,7 @@ describe('GameComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
